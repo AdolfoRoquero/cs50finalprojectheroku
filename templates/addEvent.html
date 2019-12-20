@@ -1,0 +1,80 @@
+{% extends "layout_bar.html" %}
+
+{% block title %}
+    Add Event
+{% endblock %}
+
+{% block main %}
+    <!-- Form with which bars add events that they will host -->
+    <form action="/addEvent" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Name of Event" type="text">
+        </div>
+         <div class="form-group">
+            <select class="form-control" name = "type">
+                <option disabled selected value="">What type of event are you hosting?</option>
+                <option value="sport">Sport</option>
+                <option value="party">Party</option>
+                <option value="live music">Live Music</option>
+                <option value="comedy">Stand Up Comedy</option>
+            </select>
+        </div>
+        <p class="moveDown">
+            When are you hosting this event?
+        </p>
+        <p class="moveDown">
+            Start Date
+        </p>
+        <div>
+            <input type="datetime-local" name="startdate">
+        </div>
+        <p class="moveDown">
+            Finish Date
+        </p>
+        <div>
+            <input type="datetime-local" name="enddate">
+        </div>
+        <div class="form-group">
+            <p class="moveDown">
+                What is the capacity for the event?
+            </p>
+            <input type="number" name="capacity">
+        </div>
+        <div class="form-group">
+            <textarea class="autofocus" rows="4" cols="50" name="description" placeholder="Describe the event"></textarea>
+        </div>
+        <button class="btn btn-primary moveDown" type="submit">Add Event</button>
+    </form>
+    <script>
+
+        // Checks for errors. Ensures that user included all of the necessary data. Else, it throws an alert. Check is done when
+        // user submits the form.
+        document.querySelector('form').onsubmit = function(event) {
+
+            if (!document.querySelector('input[name="name"]').value) {
+                alert('You must give the event a name!');
+                return false;
+            }
+            else if (!document.querySelector('select[name="type"]').value) {
+                alert('You must select a type of event!');
+                return false;
+            }
+            else if (!document.querySelector('input[name="startdate"]').value) {
+                alert('You must select a start date for the event!');
+                return false;
+            }
+            else if (!document.querySelector('input[name="enddate"]').value) {
+                alert('You must select an end date for the event!');
+                return false;
+            }
+            else if (!document.querySelector('textarea[name="description"]').value) {
+                alert('You must give a description of the event!');
+                return false;
+            }
+
+            // Only returns true and saves the event if all of the previous information was saved.
+            return true;
+        }
+    </script>
+
+{% endblock %}

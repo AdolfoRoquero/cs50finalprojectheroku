@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Check Bar's Profile
+{% endblock %}
+
+{% block main %}
+
+     <!-- Form whith which users choose a bar profile that they want to see -->
+    <form action="/checkBar" method="post">
+        <div class="form-group">
+            <h2>Select Bar</h2>
+            <select id="barselect" class="form-control" name="bar">
+                <option disabled="" selected="" value="">Bar</option>
+                {% for appBar in appBars %}
+                    <option value="{{ appBar["bar_name"] }}"> {{ appBar["bar_name"] }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit"> See Bar Profile</button>
+    </form>
+
+{% endblock %}

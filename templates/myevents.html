@@ -1,0 +1,58 @@
+{% extends "layout_bar.html" %}
+
+{% block title %}
+    My Events
+{% endblock %}
+
+{% block main %}
+
+<body>
+
+    <h1 class="moveDown">My Events</h1>
+
+    <form id="sendmail" action="/myevents" method="post">
+        <div class="form-group">
+            <h5 class="moveDown">Select Event</h3>
+            <select id="myeventsselect" class="form-control" name="event">
+                <option disabled="" selected="" value="">Event</option>
+                    <!-- Filling the select with events of the logged in bar. -->
+                    {% for event in events %}
+                        <option value="{{ event["id"] }}"> {{ event["name"] }} </option>
+                    {% endfor %}
+            </select>
+        </div>
+        <button id="sendemailbutton" class="btn btn-primary" type="submit">Send List via Email</button>
+    </form>
+    <h3>Attendants</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody id="tableforevents">
+      </tbody>
+    </table>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+      let input = document.getElementById("myeventsselect");
+      input.onchange = function() {
+          // Sends the chosen event back to application.py so that relevant info can be gathered from the database and sent back.
+          $.get('/eventtablelister?event=' + input.value, function(data) {
+              // Shows the send e-mail button only if the bar user chooses an event.
+              document.getElementById("sendemailbutton").style.visibility = "visible";
+              let html = '';
+              for (event of data) {
+                html += '<tr>' + '<td>' + event['name'] + '</td>' + '<td>' + event['email'] + '</td>' + '</tr>';
+              }
+              document.getElementById('tableforevents').innerHTML = html;
+          });
+      };
+
+</script>
+
+{% endblock %}

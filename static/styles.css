@@ -1,0 +1,344 @@
+nav .navbar-brand .green
+{
+
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+}
+
+
+.navbar a {
+  font-family: Montserrat, sans-serif;
+  color: #ffffff !important;
+}
+
+a {
+    color:#4f1c5c;
+}
+
+.table {
+    background-color: #FFFFFF;
+    margin-top: 20px;
+
+}
+
+.btn {
+    background-color: #4f1c5c;
+    border-color: #4f1c5c ;
+}
+
+.btn:hover {
+    background-color: #7F5988;
+    border-color: #7F5988;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+
+
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+p {
+    color:white;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+
+    font-family: Montserrat, sans-serif;
+}
+
+h1{
+    color:white;
+    margin:15px;
+}
+
+h2{
+    color:white;
+    margin:15px;
+}
+
+h3{
+    color:white;
+    margin:15px;
+}
+
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.label:after {
+    content: '\A';
+    white-space: pre;
+}
+
+.moveDown {
+    margin-top: 20px;
+}
+
+#selecteventdiv
+{
+    visibility: hidden;
+}
+
+#reservationbutton
+{
+    visibility: hidden;
+}
+
+#invisibleQuestions {
+    visibility: hidden;
+}
+
+#invisibleQuestions2 {
+    display:none;
+}
+
+#invisibleQuestions3 {
+    visibility: hidden;
+}
+
+#enlargeMessage {
+    font-size: 110%;
+    margin-top: 20px;
+}
+
+#enlargeMessage2 {
+    font-size: 110%;
+    margin-top: 20px;
+}
+
+#sendemailbutton
+{
+    visibility: hidden;
+    margin: 10px;
+}
+
+#checkHolder {
+    font-size: 100%;
+}
+#checkHolder1 {
+    font-size: 100%;
+}
+#checkHolder2 {
+    font-size: 100%;
+}
+#checkHolder3 {
+    font-size: 100%;
+}
+#checkHolder4 {
+    font-size: 100%;
+}
+#checkHolder5 {
+    font-size: 100%;
+}
+#checkHolder6 {
+    font-size: 100%;
+}
+#checkHolder7 {
+    font-size: 100%;
+}
+#checkHolder8 {
+    font-size: 100%;
+}
+#checkHolder9 {
+    font-size: 100%;
+}
+#checkHolder10 {
+    font-size: 100%;
+}
+#checkHolder11 {
+    font-size: 100%;
+}
+
+.background {
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(79, 8, 92, .79)), to(rgba(79, 8, 92, .79))), url('images/background.jpg');
+  background-image: linear-gradient(180deg, rgba(79, 8, 92, .79), rgba(79, 8, 92, .79)), url('images/background.jpg');
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, cover;
+}
+
+.backgroundnew {
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(215, 156, 226, .79)), to(rgba(215, 156, 226, .79))), url('images/background.jpg');
+  background-image: linear-gradient(180deg, rgba(215, 156, 226, .79), rgba(215, 156, 226, .79)), url('images/background.jpg');
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, cover;
+}
+
+.linkforlogin {
+  text-decoration: none;
+}
+
+.text-block-6 {
+  padding-left: 0px;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 100;
+  text-decoration: none;
+  float: right;
+  margin-top:-220px;
+  margin-right:10px;
+}
+
+.userbutton {
+  display: block;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, .08);
+  box-shadow: 0 4px 18px 0 #000;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: background-color 808ms ease, color 675ms ease, -webkit-transform 1075ms ease;
+  transition: background-color 808ms ease, color 675ms ease, -webkit-transform 1075ms ease;
+  transition: background-color 808ms ease, transform 1075ms ease, color 675ms ease;
+  transition: background-color 808ms ease, transform 1075ms ease, color 675ms ease, -webkit-transform 1075ms ease;
+  font-family: Montserrat, sans-serif;
+  color: white;
+  text-decoration:none;
+  height:40px;
+  width:200px;
+  text-align: center;
+  padding-top:20px;
+}
+
+.registerbutton {
+  display: block;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, .08);
+  box-shadow: 0 4px 18px 0 #000;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: background-color 808ms ease, color 675ms ease, -webkit-transform 1075ms ease;
+  transition: background-color 808ms ease, color 675ms ease, -webkit-transform 1075ms ease;
+  transition: background-color 808ms ease, transform 1075ms ease, color 675ms ease;
+  transition: background-color 808ms ease, transform 1075ms ease, color 675ms ease, -webkit-transform 1075ms ease;
+  font-family: Montserrat, sans-serif;
+  color: white;
+  text-decoration:none;
+  height:40px;
+  width:200px;
+  text-align: center;
+  padding-top:20px;
+  float:right;
+}
+
+.button:hover {
+  background-color: #fff;
+  -webkit-transform: translate(0px, -5px);
+  -ms-transform: translate(0px, -5px);
+  transform: translate(0px, -5px);
+  color: #000;
+}
+
+.sectionhomepage {
+  margin-top: 240px;
+}
+
+.container-9 {
+  display: block;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.mainheading {
+  display: block;
+  margin: 11px auto 0px;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.heading-2 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.div-block-10 {
+  display: block;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #4f1c5c;
+
+}
+
+#credit {
+    color: #AF97B4 !important;
+    font-size:10px;
+    float: right;
+    margin-right:10px;
+
+}
+
+
+#enlargeWeb {
+    font-size: 130%;
+}
+#invis {
+    display: none;
+}
+#invis1 {
+    display: none;
+}
+#invis2 {
+    display: none;
+}
+#invis3 {
+    display: none;
+}
+#invis4 {
+    display: none;
+}
+#invis5 {
+    display: none;
+}
+#invis6 {
+    display: none;
+}
+#invis7 {
+    display: none;
+}
+
+

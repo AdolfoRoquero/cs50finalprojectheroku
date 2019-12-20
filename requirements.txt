@@ -1,0 +1,7 @@
+cs50
+Flask
+Flask-Session
+requests
+Flask-Mail
+Calendar API. https://developers.google.com/calendar/quickstart/python
+    Execute: pip install --upgrade google-api-python-client oauth2client

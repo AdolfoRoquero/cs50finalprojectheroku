@@ -1,0 +1,38 @@
+{% extends "layout_bar.html" %}
+
+{% block title %}
+    Calendar
+{% endblock %}
+
+{% block main %}
+  <h2>All Events Calendar</h2>
+  <!-- Shows a calendar with the events that all bars will have  -->
+  <iframe src="https://calendar.google.com/calendar/embed?src=college.harvard.edu_0vudnc3sm0evvu7ijdv20op17o%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+   <!-- Shows a list in a table of all of the events that bar has hosted or will host -->
+  <h2>My Events</h2>
+  <body>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type of Event</th>
+              <th scope="col">Start</th>
+              <th scope="col">Finish</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in events %}
+                <tr>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['type']}}</td>
+                    <td>{{row['date']}}</td>
+                    <td>{{row['enddate']}}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </body>
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "layout_bar.html" %}
+
+{% block title %}
+    Check Bar's Profile
+{% endblock %}
+
+{% block main %}
+
+    <!-- Shows profile of a bar when seen by a bar -->
+    <!-- Uses ninja as it gets data from the dictionary, bars, that is given by the access route -->
+    <h1 id="invis" class="form-group" name="name" value="{{ bars["bar_name"] }}">
+        {{ bars["bar_name"] }}
+    </h1>
+    <div id="invis1" class="form-group" name="picLink">
+         <img src="{{ bars["picLink"] }}">
+    </div>
+    <div class="form-group">
+        <h5 id="invis2" name="phone">
+            Phone Number: {{ bars["phone"] }}
+        </h5>
+        <div>
+            <h5 id="invis7" name="email">
+                {{ bars["email"] }}
+            </h5>
+        </div>
+        <div>
+            <a id="invis3" class="enlargeBar" href="{{ bars["website"] }}" name="website">Website</a>
+        </div>
+    </div>
+    <div class="form-group">
+        <p id="invis4" name="openHour">
+            Opens at: {{ bars["openHour"] }}
+        </p>
+        <p id="invis5" name="closeHour">
+            Closes at: {{ bars["closeHour"] }}
+        </p>
+    </div>
+    <div id="invis6" class="form-group" name="address">
+        <p>
+            {{ bars["address"] }}
+        </p>
+    </div>
+
+    <script>
+
+        // Gets a json list. This code checks whether the bar has all of the previous data. However, if a bar does not have one of
+        // the elements, then the element is not shown in the profile page. Rather, its display is blocked. This way, elements
+        // that bars don't have data of are not displayed and do not occupy space in the interface.
+
+        var bars={{barsjson|safe}}
+
+        if (bars['openHour'] && bars['openHour'] != 'NULL') {
+            document.getElementById("invis4").style.display = "block";
+        }
+        if (bars['closeHour'] && bars['closeHour'] != "NULL") {
+            document.getElementById("invis5").style.display = "block";
+        }
+        if (bars['bar_name'] && bars['bar_name'] != "NULL") {
+            document.getElementById("invis").style.display = "block";
+        }
+        if (bars['picLink'] && bars['picLink'] != "NULL" ) {
+            document.getElementById("invis1").style.display = "block";
+        }
+        if (bars['phone'] && bars['phone'] != "NULL") {
+            document.getElementById("invis2").style.display = "block";
+        }
+        if (bars['website'] && bars['website'] != "NULL") {
+            document.getElementById("invis3").style.display = "block";
+        }
+        if (bars['openHour'] && bars['openHour'] != "NULL") {
+            document.getElementById("invis4").style.display = "block";
+        }
+        if (bars['closeHour'] && bars['closeHour'] != "NULL") {
+            document.getElementById("invis5").style.display = "block";
+        }
+        if (bars['address'] && bars['address'] != "NULL") {
+            document.getElementById("invis6").style.display = "block";
+        }
+        if (bars['email'] && bars['email'] != "NULL") {
+            document.getElementById("invis7").style.display = "block";
+        }
+
+    </script>
+
+{% endblock %}

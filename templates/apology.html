@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+
+{% block main %}
+    <!-- Gives beer image with error message -->
+    <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/beer.jpg" title="{{ top }}">
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <select class="form-control" name = "userType">
+                <option disabled selected value="">Would you like to log in as a customer or a bar?</option>
+                <option value="users"> Customer </option>
+                <option value="bars"> Bar </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+    <script>
+
+        // Carries-out error checking to ensure that user has submitted the necessary values to logged them in. If not, an alert
+        // is thrown.
+
+        document.querySelector('form').onsubmit = function(event) {
+
+            if (!document.querySelector('select').value) {
+                alert('You must indicate if you are a user or a bar!');
+                return false;
+            }
+            else if (!document.querySelector('input[name="username"]').value) {
+                alert('You must provide your username!');
+                return false;
+            }
+            else if (!document.querySelector('input[name="password"]').value) {
+                alert('You must provide your password!');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+{% endblock %}

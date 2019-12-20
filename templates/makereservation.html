@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make a Reservation
+{% endblock %}
+
+{% block main %}
+    <form id="reservationmaker" action="/makereservation" method="post">
+        <div class="form-group">
+            <h2>Make a Reservation</h2>
+            <select id="barselect" class="form-control" name="bar">
+                <option disabled="" selected="" value="">Bar</option>
+                    <!-- Filling the select with the bar names that are hosting events. -->
+                    {% for event in events %}
+                        <option value="{{ event["id_bar"] }}"> {{ event["bar_name"] }} </option>
+                    {% endfor %}
+            </select>
+        </div>
+        <div id="selecteventdiv" class="form-group">
+            <h3>Select Event</h3>
+            <select id="eventoptions" class="form-control" name="event">
+                <option disabled="" selected="" value="">Event</option>
+            </select>
+        </div>
+        <button id="reservationbutton" class="btn btn-primary" type="submit">Make a Reservation</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+
+        let input = document.getElementById("barselect");
+        input.onchange = function() {
+            // The select for events and the reservation only shows up if the user selects a bar.
+            document.getElementById("selecteventdiv").style.visibility = "visible";
+            document.getElementById("reservationbutton").style.visibility = "visible";
+            // Sends the selected bar to application.py
+            $.get('/eventlister?bar=' + input.value, function(data) {
+                let html = '';
+                for (event of data) {
+                    html += `<option value="${event['id']}">` + event['name'] + '</option>';
+                }
+                document.getElementById('eventoptions').innerHTML = html;
+            });
+        };
+
+    </script>
+
+{% endblock %}

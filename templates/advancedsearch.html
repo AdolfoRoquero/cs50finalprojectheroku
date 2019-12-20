@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block main %}
+<form action="/user" method="post">
+          <h1>Find Events:</h1>
+
+          <label class="my-1 mr-2" for="FormSelect">Type</label>
+               <select class="custom-select my-1 mr-sm-2" id="FormSelect" name="typeofevent">
+                  <option disabled selected value="">Choose...</option>
+                  <option value="sport">Sport</option>
+                  <option value="party">Party</option>
+                  <option value="live music">Live Music</option>
+                  <option value="comedy">Stand Up Comedy</option>
+                </select>
+
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="searchdate"  id="Radios0" checked>
+              <label class="form-check-label" for="Radios0">Specific date</label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="searchdate" id="Radios1" >
+              <label class="form-check-label" for="Radios1">Range of dates</label>
+            </div>
+
+          <label class="my-1 mr-2" for="FormSelect">Start Day</label>
+               <input type="date" name="startday">
+
+          <label class="my-1 mr-2" for="FormSelect">End Day</label>
+               <input type="date" name="endday" disabled>
+
+          <div>
+              <label class="my-1 mr-2" for="FormSelect">Order by</label>
+                   <select class="custom-select my-1 mr-sm-2" id="FormSelect" name="orderby">
+                      <option disabled selected value=" ">Choose...</option>
+                      <option value="events.name">Name</option>
+                      <option value="events.date">Date</option>
+                    </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+<script>
+ let range = document.getElementById("Radios1");
+         let specific = document.getElementById("Radios0");
+                range.onchange = function() {
+                    document.querySelector('input[name="endday"]').disabled = false
+                };
+                specific.onchange = function() {
+                    document.querySelector('input[name="endday"]').disabled = true
+                };
+
+
+
+</script>
+{% endblock %}
